@@ -1,10 +1,15 @@
+import React from 'react';
+import { ThemeProvider } from './context/ThemeContext';
+import Navbar from './components/Navbar';
 
-function App() {
+export default function App() {
   return (
-    <>
-      <h1 className='text-3xl'>Hello World</h1>
-    </>
-  )
+    <ThemeProvider>
+      <Navbar />
+      <div style={{ textAlign: 'center', marginTop: '50px' }}>
+        <h1>Welcome to Themed App</h1>
+        <p>This is an example of applying global themes using Context API.</p>
+      </div>
+    </ThemeProvider>
+  );
 }
-
-export default App
