@@ -6,8 +6,8 @@ export default function App() {
   return (
     <ThemeProvider>
       <Navbar />
-      <div style={{ textAlign: 'center', marginTop: '50px' }}>
-        <h1>Welcome to Themed App</h1>
+      <div className='flex justify-center items-center h-screen'>
+        <h1>Welcome to Themed App.</h1>
         <p>This is an example of applying global themes using Context API.</p>
       </div>
     </ThemeProvider>

@@ -5,7 +5,7 @@ const Navbar = () => {
 	const { theme, toggleTheme } = useTheme();
 
 	return (
-		<div style={{ padding: "20px" }}>
+		<div className="flex justify-between items-center p-4">
 			<p>Current Theme: {theme}</p>
 			{theme === "light" ? (
 				<button onClick={toggleTheme}>Switch to Dark</button>
