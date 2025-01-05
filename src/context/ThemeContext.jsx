@@ -1,21 +1,28 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 
-// Create Context
 const ThemeContext = createContext();
 
-// Provider Component
-const ThemeProvider = ({ children }) => {
+export const useTheme = () => {
+	const context = useContext(ThemeContext);
+	if (!context) {
+		throw new Error("useTheme must be used within a ThemeProvider");
+	}
+	return context;
+};
+
+export const ThemeProvider = ({ children }) => {
 	const [theme, setTheme] = useState("light");
 
 	const toggleTheme = () => {
-		setTheme((prev) => (prev === "light" ? "dark" : "light"));
+		setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
 	};
 
-	// Apply theme to body on theme change
+	// Apply theme to body
 	useEffect(() => {
-		document.body.style.backgroundColor =
-			theme === "light" ? "#fff" : "#333";
-		document.body.style.color = theme === "light" ? "#000" : "#fff";
+		document.body.className =
+			theme === "light"
+				? "bg-white text-black"
+				: "bg-gray-900 text-white";
 	}, [theme]);
 
 	return (
@@ -24,8 +31,3 @@ const ThemeProvider = ({ children }) => {
 		</ThemeContext.Provider>
 	);
 };
-
-// Custom Hook to Use Context (optional)
-const useTheme = () => useContext(ThemeContext);
-
-export { ThemeProvider, useTheme, ThemeContext };
