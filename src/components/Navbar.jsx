@@ -13,7 +13,7 @@ const Navbar = () => {
 		>
 			<div className="container mx-auto flex justify-between items-center py-4 px-6">
 				<Link to="/" className="text-2xl font-semibold text-white">
-					Comment App
+					Home-m"
 				</Link>
 				<div className="flex items-center space-x-4">
 					<Link
