@@ -1,5 +1,17 @@
 # React + Vite
 
+We can follow the following folder structure for creating react-redux project files
+src/
+  store/
+    store.js
+    reducer.js
+  components/
+    Counter.js
+  App.js
+  index.js
+
+
+<!-- 1. `src/store/store.js`: This file contains the Redux store setup. -->
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
